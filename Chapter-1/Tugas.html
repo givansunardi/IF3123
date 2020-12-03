@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html> 
+<head>       
+	<title>Tugas Implementasi Interface</title> 
+</head> 
+<body>       
+	<form name="formTugas" id="tugasku" action="" onsubmit="return validateForm()" method="POST">    
+		<input type="text" name="username" id="username" placeholder="Username" ><br>       
+		<input type="password" name="password" id="pass" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$"><br>       
+		<input type="password" name="repeat" id="repeat" placeholder="Ulangi Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$"><br>       
+		<input type="text" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>       
+		<input type="text" name="telp" id="telp" placeholder="Nomor Telepon" pattern="[0-9]{10,12}$"><br>       
+		<textarea id="alamat" style="width: 167px;" required>Alamat</textarea><br>       
+		<input type="submit" name="" value="Submit">       
+	</form> 
+	<script type="text/javascript">       
+	function validateForm(){             
+		var username = document.formTugas.username.value;
+		var pass = document.formTugas.password.value;
+		var repeat = document.formTugas.repeat.value;
+		if((username.length<3) || (username.length>15)){
+			alert("Username harus 3-15 karakter");
+			return false;             
+		}
+		if(pass.value != repeat.value){
+			alert("Password tidak sama");
+			return false;
+		}
+		
+		return true;       
+	} 
+</script> 
+</body> 
+
+</html>
